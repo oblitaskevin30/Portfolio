@@ -77,11 +77,20 @@ const socialLinks = [
                 <Projects />
                 <Contact />
               </>
-            } 
+            }
             />
+            
+            <Route path="/hero" element={<Hero />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/project/:projectTitle" element={<ProjectsDetails />} />
           </Routes>
+          
         </main>
+        <h4 className="text-center text-base text-gray-500 mt-8 mb-4 ">
+          By Jonathan Oblitas :D
+        </h4>
       </Context.Provider>
     </BrowserRouter>
     </>

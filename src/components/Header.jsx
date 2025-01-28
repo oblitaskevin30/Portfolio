@@ -2,11 +2,12 @@
 import {useState} from 'react'
 import { useContext } from 'react'
 import { Context } from '../App'
+import { Link } from 'react-router-dom'
 
-// icons
+
 import logo from '/src/assets/LOGOKEVIN2.png'
 
-// Components
+
 import Navbar from  './Navbar'
 
 
@@ -56,7 +57,9 @@ const Header = () => {
                 <button
                 className="menu-btn 
                 md:hidden
-                
+                border-solid
+                border-zinc-100
+                border-2
                 "
                 onClick={()=>setNavOpen((prev)=>!prev)}
                 >
@@ -70,16 +73,17 @@ const Header = () => {
                 <Navbar navOpen = {navOpen}/>
             </div>
 
-            <a href="#contact"
-                className="btn btn-secondary max-md:hidden
-                md:justify-self-end
-                bg-zinc-800
-                border-solid
-                border-white
-                border-2
-                ">
-                    Contact Me
-            </a>
+            <Link
+                        to={`/contact`}
+                        className="btn btn-secondary max-md:hidden
+                                    md:justify-self-end
+                                    bg-zinc-800
+                                    border-solid
+                                    border-white
+                                    border-2
+                                    ">
+                                        Contact Me
+            </Link>
         
         </div>
 

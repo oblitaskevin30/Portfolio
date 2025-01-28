@@ -4,17 +4,18 @@ const Contact= () => {
 
     return(
 
-        <section id="contact" className="container pt-6 pb-10 lg:grid lg:grid-cols-2 lg:mt-10 
-        lg:gap-8 lg:min-h-screen justify-center items-center">
+        <section id="contact" className="container pt-6 pb-10 lg:grid lg:grid-cols-2 lg:mt-0 
+        lg:gap-8 lg:h-[90vh] xl:h-[90vh] lg:pt-0 lg:pb-0 justify-center items-center">
             <div className="">
                 <h2 className="tittle-contact">
                     Contact me for colaboration
                 </h2>
-                <p className="pb-5">
-                    
-                    I’m Jonathan Oblitas, a passionate programmer with the skills to assist you in developing web and mobile applications. If you have a project idea, something interesting to discuss, or just want to talk about technology, don’t hesitate to contact me. Im always open to new opportunities and collaborations. I’d love to hear from you!
-                    
-                
+                <p className="pb-5">                   
+                Thank you for visiting this portfolio. I’m always open to new projects and opportunities. If you have an interesting idea or just want to talk about technology, feel free to reach out. I'm ready to collaborate and bring my best to the table.
+                    <br/>
+                    <br/>
+                Sincerely,
+                JKOC                
                 </p>
             </div>
 

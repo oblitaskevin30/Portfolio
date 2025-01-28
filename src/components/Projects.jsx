@@ -18,15 +18,15 @@ const Projects = () => {
           description : "In this Angular project you could see a Heroes CRUD , where yu can add, read, update and delete a hero object . Also , it has a Login modulo where you'll put your credentials to login. The project has a local backend , so to run it first has to run 'npm run backend' , then in another terminal run 'ng serve' ",
           tags: ['Angular', 'Bootstrap', 'typeSript'],
           projectLinkFront: 'https://github.com/oblitaskevin30/Angular/tree/main/heroesApp',
-          projectLinkBack : '#'
+          projectLinkBack : 'https://github.com/oblitaskevin30/Angular/tree/main/heroesApp'
         },
         {
           imgSrc: '/images/project-3.jpg',
           title: 'Recipe app',
           description : "",
           tags: ['Development', 'API'],
-          projectLinkFront: 'https://github.com/oblitaskevin30/Angular/tree/main/sellCar-angular',
-          projectLinkBack : '#'
+          projectLinkFront: '/',
+          projectLinkBack : '/'
         }
 
     ];
@@ -47,6 +47,7 @@ const Projects = () => {
                         
                         key={key}
                       >
+                        
                         <ProjectCards 
                         imgSrc={imgSrc}
                         title={title}

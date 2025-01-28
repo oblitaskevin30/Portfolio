@@ -1,4 +1,5 @@
 import { useRef , useEffect } from "react"
+import { Link } from 'react-router-dom';
 import PropTypes from "prop-types"
 
 
@@ -16,73 +17,58 @@ const Navbar = ({navOpen}) =>{
             activeBox.current.style.left = lastActiveLink.current.offsetLeft + "px";
             activeBox.current.style.width = lastActiveLink.current.offsetWidth + "px";
             activeBox.current.style.height = lastActiveLink.current.offsetHeight + "px";
-          }
-
+        }
     }
+
     useEffect(() => {
         initActiceBox();
         window.addEventListener('resize', initActiceBox);
     
-        // Cleanup event listener on unmount
         return () => {
-          window.removeEventListener('resize', initActiceBox);
+        window.removeEventListener('resize', initActiceBox);
         };
-      }, []);
+    }, []);
 
-    //useEffect(initActiceBox,[])
+
 
     window.addEventListener('resize', initActiceBox)
 
     const activeCurrentLink = (event) =>{
         if (lastActiveLink.current) {
             lastActiveLink.current.classList.remove('active');
-          }
-          event.target.classList.add('active');
-          lastActiveLink.current = event.target;
-      
-          if (activeBox.current) {
+        }
+        event.target.classList.add('active');
+        lastActiveLink.current = event.target;
+    
+        if (activeBox.current) {
             activeBox.current.style.top = event.target.offsetTop + "px";
             activeBox.current.style.left = event.target.offsetLeft + "px";
             activeBox.current.style.width = event.target.offsetWidth + "px";
             activeBox.current.style.height = event.target.offsetHeight + "px";
-          }
+        }
 
-        // lastActiveLink.current?.classList.remove('active');
-        // event.target.classList.add('active')
-        // lastActiveLink.current = event.target;
-
-        // activeBox.current.style.top = event.target.offsetTop + "px";
-        // activeBox.current.style.left = event.target.offsetLeft + "px";
-        // activeBox.current.style.width = event.target.offsetWidth + "px";
-        // activeBox.current.style.height = event.target.offsetHeight + "px";
     }
 
     const menuNav = [
-        {
-            label : 'Home',
-            link : '#hero',
-            className : 'nav-link active',
-            ref:lastActiveLink
 
-        },
         {
             label : 'About Me',
-            link : '#hero',
+            link : '',
             className : 'nav-link',
         },
         {
             label : 'Habilities',
-            link : '#skills',
+            link : 'skills',
             className : 'nav-link',
         },
         {
             label : 'My proyects',
-            link : '#projects',
+            link : 'projects',
             className : 'nav-link',
         },
         {
             label : 'Contact Me',
-            link : '#contact',
+            link : 'contact',
             className : 'nav-link md:hidden',
         }
     ]
@@ -94,15 +80,16 @@ const Navbar = ({navOpen}) =>{
                 menuNav.map(({label,link,className} , key )=>{
 
                     return (
-                        <a
-                        href={link}
-                        key = {key}
-                        ref={(el) => linkRefs.current[key] = el}
+                        <Link
+                        to={`/${link}`}
                         className={className}
                         onClick={activeCurrentLink}
-                    >
+                        ref={(el) => linkRefs.current[key] = el}
+                        key={key}
+                      >
                         {label}
-                    </a>    
+                      </Link>
+    
                     )
                 })
             }
